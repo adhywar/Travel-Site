@@ -1,0 +1,1387 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Work+Sans:wght@400;500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+}
+
+:root {
+    --title: rgb(24, 2, 61);
+    --paragraphs: #777;
+    --para-tint: #e4e4e4;
+    --white: #fff;
+    --overlay: hsl(228, 98%, 58%);
+    --black: #212529;
+    --helper: #8490ff;
+    --helper-tint: #f3f4ff;
+    --background: rgb(249 249 255);
+    --icon-bg: rgb(144, 172, 209, 0.2);
+    --gradient: rgb(175, 182, 244);
+    --gradientSupport: -webkit-linear-gradient(0deg,
+            rgb(132 144 255) 0%,
+            rgb(98 189 252) 100%);
+    --shadowSupport: 0px 20px 20px 0px rgb(132 144 255 / 30%);
+    --shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Poppins", sans-serif;
+}
+
+h1 {
+    color: var(--heading);
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+h4 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 500;
+}
+
+p {
+    color: var(--para);
+    line-height: 1.6;
+    font-size: 1.7rem;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+
+/* Reusable code  */
+.section {
+    padding: 7rem 0;
+}
+
+.container {
+    max-width: 100rem;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    gap: 9rem;
+}
+
+.grid-two-column {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-three-column {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-four-column {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.btn {
+    background: #4681f4;
+    padding: 1.4rem 2.6rem;
+    border: none;
+    color: var(--helper-tint);
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease 0s;
+    -moz-transition: all .3s ease 0s;
+    -o-transition: all .3s ease 0s;
+}
+
+.btn:hover,
+.btn:active {
+    box-shadow: var(--shadowSupport);
+    background-color: aliceblue;
+    color: indigo;
+}
+
+.common-heading {
+    font-size: 3.9rem;
+    font-weight: 600;
+    margin-bottom: 6rem;
+    text-transform: capitalize;
+    position: relative;
+}
+
+.common-heading::before {
+    content: "";
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: #4681f4;
+    border-radius: 0%;
+}
+
+.common-heading::after {
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 1.5rem;
+    min-width: 15rem;
+    height: .3rem;
+    background: #4681f4;
+}
+
+/* Reusable End  */
+
+
+/* Header section start  */
+
+.header-top {
+    background-color: var(--title);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    color: var(--white);
+}
+
+.header-top p {
+    font-size: 2rem;
+    font-weight: 400;
+    font-family: 'Rubik', sans-serif;
+    cursor: pointer;
+    margin: 0 20rem;
+}
+
+.header {
+    display: flex;
+    padding: 0 4.8rem;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    height: 7rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 5rem;
+    gap: 16rem;
+}
+
+.logo {
+    position: absolute;
+    left: 1.4rem;
+    width: 7rem;
+    height: 6.8rem;
+}
+
+.navbar-lists {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4.8rem;
+}
+
+.navbar-link:link,
+.navbar-link:visited {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--black);
+    transition: all 0.3s;
+    font-family: "Poppins", sans-serif;
+}
+
+.navbar-link:hover,
+.navbar-link:active {
+    color: var(--helper);
+    transition: all .2s linear;
+}
+
+.mobile-nav-btn {
+    display: none;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+
+.mobile-nav-icon[name="close-outline"] {
+    width: 3rem;
+    height: 3.2rem;
+    color: #212529;
+}
+
+.mobile-nav-icon[name="close-outline"] {
+    display: none;
+}
+
+.sticky .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    padding-top: 0;
+    padding-bottom: 0;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    text-align: right;
+    z-index: 34;
+}
+
+.whatsapp-img {
+    width: 6rem;
+    cursor: pointer;
+}
+
+/* swiper started */
+.containers {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    background: url("images/background.avif");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.swiper {
+    width: 70%;
+    height: 46rem;
+}
+
+.swiper-slide img {
+    width: 100%;
+    /* background-color: aqua; */
+    height: 45rem;
+    position: relative;
+    overflow: hidden;
+    background-attachment: fixed;
+    transition: all .7s linear;
+}
+
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next {
+    color: yellow;
+}
+
+.swiper .swiper-pagination-bullet-active {
+    background-color: yellow;
+}
+
+/* Swiper End  */
+
+
+/* Services Section Started  */
+
+.section-services {
+    transition: all .7s linear;
+}
+
+.section-services .grid {
+    margin-top: 10rem;
+    row-gap: 8rem;
+    column-gap: 2rem;
+}
+
+.services-box {
+    text-align: center;
+    box-shadow: var(--shadow);
+    border-radius: 10px;
+    padding: 5.4rem 4.1rem;
+    transition: all .2s linear;
+    border: .8px solid indigo;
+}
+
+.services-box img {
+    width: 25rem;
+    height: 20rem;
+}
+
+.services-box p span {
+    color: rgb(255, 132, 0);
+    font-weight: 700;
+}
+
+.services-box .cards-button {
+    background: #4681f4;
+    margin-top: 3rem;
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 1.6rem;
+    color: var(--helper-tint);
+    display: inline-block;
+    font-size: 1.8rem;
+    font-weight: 200;
+    cursor: pointer;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease 0s;
+    -moz-transition: all .3s ease 0s;
+    -o-transition: all .3s ease 0s;
+}
+
+.cards-button:hover,
+.cards-button:active {
+    box-shadow: var(--shadowSupport);
+    background-color: aliceblue;
+    color: indigo;
+}
+
+.services-box .span2 {
+    font-family: 'Rubik', sans-serif;
+    font-size: medium;
+    font-weight: 600;
+}
+
+.services-box:hover,
+.service-box:active {
+    transform: translateY(-4rem);
+}
+
+.services-box h4 {
+    text-transform: capitalize;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Services Section Started  */
+
+
+/* Popular Tour Start  */
+
+.tour-images {
+    gap: 3rem;
+}
+
+.tour-images img {
+    width: 100%;
+    border-radius: 7px;
+    position: hidden;
+    overflow: hidden;
+    border: 1px solid indigo;
+    z-index: 10;
+}
+
+.img-overlay {
+    position: relative;
+    overflow: hidden;
+}
+
+.img-overlay .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1D2B64;
+    opacity: 0;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    transform: translateX(100%);
+    transition: all .3s linear;
+    border-radius: 7px;
+}
+
+.overlay .common:hover {
+    cursor: pointer;
+}
+
+.img-overlay:hover>.overlay {
+    transform: translateY(0);
+    opacity: 0.8;
+}
+
+.img-overlay .common {
+    margin: 0;
+    color: var(--white);
+    text-decoration: none;
+    font-size: xx-large;
+    font-weight: 500;
+}
+
+a .tour-btn {
+    width: 19rem;
+    height: 4.6rem;
+    font-size: 1.6rem;
+    padding: .2rem 0;
+    border-radius: 4px;
+}
+
+.p-btn-active {
+    transform: translateY(-1rem);
+}
+
+.p-image-not-active {
+    display: none;
+}
+
+#ayodhya-img img {
+    height: 36.6rem;
+}
+
+.tour-btn {
+    background: #4681f4;
+    padding: 1.4rem 2.6rem;
+    border: none;
+    color: var(--helper-tint);
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease 0s;
+    -moz-transition: all .3s ease 0s;
+    -o-transition: all .3s ease 0s;
+}
+
+.tour-btn:hover,
+.tour-btn:active {
+    box-shadow: var(--shadowSupport);
+    background-color: aliceblue;
+    color: indigo;
+}
+
+/* Popular Tour End */
+
+
+/* Tour Plans Details  */
+.subsection .grid {
+    gap: 6rem;
+}
+
+.subsection {
+    margin: 4rem 0;
+}
+
+.main-heading h3 {
+    font-size: x-large;
+    font-weight: 600;
+    color: var(--helper-tint);
+    background-color: var(--title);
+    text-align: center;
+    border-radius: 3px;
+}
+
+.vnstour-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.vnstour-img img {
+    width: 30rem;
+    height: 20rem;
+    display: inline-block;
+    border-radius: 2px;
+}
+
+.tour-details {
+    display: flex;
+    padding: 4rem 0;
+    flex-direction: column;
+    gap: 1rem;
+    height: 4rem;
+}
+
+.tour-details h5 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    font-family: "Rubik", sans-serif;
+}
+
+.tour-details p span {
+    color: chocolate;
+}
+
+.tour-details p {
+    font-size: medium;
+    font-weight: 500;
+    max-width: fit-content;
+}
+
+/* Tour Plans Details  */
+
+/* Table Section Start  */
+
+table {
+    border: 1px solid indigo;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.table {
+    max-width: 100rem;
+    border-collapse: collapse;
+}
+
+.table td,
+.table th {
+    padding: 20px 15px;
+    border: 1px solid coral;
+    text-align: center;
+    font-size: 16px;
+}
+
+.table th {
+    background-color: coral;
+    font-size: 1.5rem;
+}
+
+.table tbody {
+    background-color: var(--helper-tint);
+    font-size: medium;
+    font-weight: 500;
+}
+
+.table .trfoot th {
+    /* background-color: rgb(231, 226, 161); */
+    font-size: medium;
+    font-weight: 500;
+}
+
+table,
+th,
+td {
+    padding: 1.1rem;
+}
+
+
+/* Table Section End  */
+
+/* Testimonial Section Start*/
+.section-testimonial .testimonial-slider {
+    padding: 1rem;
+    height: 32rem;
+    background-color: #1D2B64;
+    border-radius: 1rem;
+}
+
+.section-testimonial .testimonial-slider .box {
+    background-color: hsl(19, 88%, 81%);
+    border-radius: .5rem;
+    text-align: center;
+    padding: 3rem 4rem;
+    outline-offset: -1rem;
+    box-shadow: var(--shadow);
+    transition: .2s linear;
+    height: 30rem;
+    width: 10rem;
+    background-color: var(--white);
+}
+
+.section-testimonial .testimonial-slider .box:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.section-testimonial .testimonial-slider .box img {
+    width: 9rem;
+    height: 9rem;
+    border-radius: 50%;
+}
+
+.section-testimonial .testimonial-slider .box p {
+    padding: 1rem 0;
+    line-height: 1.8;
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.section-testimonial .testimonial-slider .box h3 {
+    padding-bottom: .7rem;
+    font-size: 2.2rem;
+}
+
+.section-testimonial .testimonial-slider .box .stars i {
+    color: yellowgreen;
+    font-size: 1.8rem;
+}
+
+/* Testimonial Section End */
+
+
+/* Contact Section Started  */
+.section-contact-main {
+    max-width: 70rem;
+    margin: 0 auto;
+    margin-top: 9rem;
+    transition: all .3s linear;
+}
+
+.section-contact-main .grid {
+    gap: 3rem;
+}
+
+.section-contact-main form {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.section-contact-main input,
+.section-contact-main textarea {
+    padding: 1.5rem 2rem;
+    border: .1rem solid #c9c9c9;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    font-family: "Work Sans";
+    width: 100%;
+}
+
+.section-contact-main input[type="submit"] {
+    max-width: 30%;
+    border: none;
+}
+
+.section-contact iframe {
+    margin-top: 8rem;
+}
+
+/* Contact Section End */
+
+/* Footer Section Started */
+
+.section-footer {
+    background: var(--title);
+    transition: all .7s linear;
+    height: 50rem;
+}
+
+.section-footer h3 {
+    color: var(--white);
+    margin-bottom: 3rem;
+    font-size: 1.8rem;
+    font-weight: 200;
+    cursor: pointer;
+}
+
+.f-about p {
+    color: #adadad;
+    max-width: 20rem;
+    font-size: 1.6rem;
+}
+
+.f-services ul,
+.f-address address {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    list-style: none;
+}
+
+.f-services li,
+.f-services a {
+    font-size: 1.6rem;
+    color: #adadad;
+}
+
+.f-services span,
+.f-address span {
+    margin-right: .8rem;
+}
+
+.f-address p,
+a {
+    font-style: normal;
+    color: #adadad;
+    font-size: 1.6rem;
+}
+
+.f-credits p {
+    margin-top: 4rem;
+    text-align: center;
+    color: #adadad;
+    font-size: medium;
+}
+
+footer a:hover {
+    color: yellow;
+}
+
+/* Footer Section Ended */
+
+/* About Us Start  */
+.section-about {
+    padding-top: 1rem;
+}
+
+.headings h4 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.headings p {
+    font-size: medium;
+    font-weight: 500;
+    max-width: fit-content;
+    color: var(--para);
+}
+
+.container3 {
+    background: url(images/parallexs.avif);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    position: relative;
+    transition: all .7s linear;
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.gallery-img {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin: 3rem 0;
+}
+
+.gallery-img img {
+    width: 26rem;
+    height: 22rem;
+    border-radius: 1rem;
+}
+
+/* About Us End  */
+
+/* MEDIA QUERIES STAAARRRT */
+@media (max-width: 1280px) {
+
+    .header-top p {
+        font-size: 1.8rem;
+    }
+
+    .containers {
+        height: 70vh;
+    }
+
+    .swiper {
+        width: 76%;
+        height: 34rem;
+    }
+
+    .swiper-slide img {
+        width: 100%;
+        background-color: aqua;
+        height: 36rem;
+    }
+
+}
+
+@media (max-width: 780px) {
+    .header-top p {
+        font-size: 1.5rem;
+    }
+
+    .containers {
+        height: 70vh;
+    }
+
+    .swiper {
+        width: 76%;
+        height: 26rem;
+    }
+
+    .swiper-slide img {
+        width: 100%;
+        background-color: aqua;
+        height: 29rem;
+    }
+
+
+    .container {
+        max-width: 70rem;
+    }
+
+    .header-top p {
+        font-size: 1.5rem;
+        margin: 0 10rem;
+    }
+
+    .swiper {
+        width: 76%;
+        height: 26rem;
+    }
+
+    .swiper-slide img {
+        width: 100%;
+        background-color: aqua;
+        height: 29rem;
+    }
+
+
+    .container {
+        width: 768px;
+        max-width: 60rem;
+    }
+
+    .section-services .grid {
+        row-gap: 4rem;
+        /* column-gap: 1rem; */
+    }
+
+    .section-services .grid-three-column {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-box {
+        max-width: 28rem;
+        padding: 5.4rem 3.1rem;
+    }
+
+    .section-services .grid-three-column {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-box img {
+        width: 22rem;
+        height: 18rem;
+    }
+
+    .tour-images {
+        width: 768px;
+        gap: 3rem;
+        column-gap: 2rem;
+        max-width: 60rem;
+    }
+
+    .tour-images img {
+        width: 98%;
+    }
+
+    .img-overlay .overlay {
+        width: 90%;
+        transform: translateY(70%);
+    }
+
+    .overlay .common:hover {
+        cursor: pointer;
+    }
+
+    .img-overlay:hover>.overlay {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+
+    .img-overlay .common {
+        font-size: 2.1rem;
+    }
+
+    #ayodhya-img img {
+        height: 21.4rem;
+    }
+
+    .section-testimonial .testimonial-slider .box img {
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+    }
+
+    .section-testimonial .testimonial-slider .box p {
+        padding: 1rem 0;
+        line-height: 1.3;
+        font-size: 1.4rem;
+    }
+
+
+    .section-testimonial .testimonial-slider .box .stars i {
+        font-size: 1.4rem;
+    }
+
+    .section-contact-main {
+        width: 768px;
+        max-width: 60rem;
+    }
+
+    .section-footer {
+        height: 76rem;
+        max-width: 76rem;
+    }
+
+    .section-footer .grid-four-column {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .vnstour-img img {
+        width: 28rem;
+        height: 18rem;
+        border-radius: .4rem;
+    }
+
+    .vnstour-details {
+        height: 10rem;
+    }
+
+    .tour-details {
+        padding: 2rem 0;
+        gap: .1rem;
+    }
+
+    .tour-details p {
+        font-size: 1.4rem;
+    }
+
+    .gallery-img img {
+        width: 14rem;
+        height: 14rem;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .header-top {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .header-top p {
+        font-size: 1.5rem;
+        margin: 0 0;
+    }
+
+    .header {
+        position: relative;
+        padding: 0 4rem;
+        gap: 1rem;
+    }
+
+    .navbar-lists {
+        gap: 1rem;
+    }
+
+    .navbar-link:link,
+    .navbar-link:visited {
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+
+    .mobile-nav-btn {
+        position: absolute;
+        right: 1.8rem;
+        display: block;
+        z-index: 9999;
+        border: 3px solid #212529;
+        color: black;
+
+    }
+
+    .mobile-nav-icon {
+        width: 3em;
+        height: 3rem;
+    }
+
+    .header .logo {
+        width: 6rem;
+        height: 6rem;
+    }
+
+    .navbar {
+        width: 100%;
+        height: 54vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(100%);
+        transition: all 0.2s linear;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        z-index: 9999;
+
+    }
+
+    .navbar-lists {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar .navbar-lists .navbar-link:link,
+    .navbar .navbar-lists .navbar-link:visited {
+        color: #212529;
+        font-size: 2rem;
+    }
+
+    .active .navbar {
+        transform: translateX(0%);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        z-index: 9999;
+    }
+
+    .active .mobile-nav-btn .mobile-nav-icon[name="menu-outline"] {
+        display: none;
+    }
+
+    .active .mobile-nav-btn .mobile-nav-icon[name="close-outline"] {
+        display: block;
+    }
+
+
+    .containers {
+        height: 60vh;
+    }
+
+    .swiper {
+        width: 94%;
+        height: 26rem;
+    }
+
+    .swiper-slide img {
+        width: 100%;
+        height: 28rem;
+    }
+
+    .container {
+        width: 480px;
+        max-width: 39rem;
+    }
+
+    .section-services .grid {
+        row-gap: 6rem;
+    }
+
+    .section-services .grid-three-column {
+        grid-template-columns: 1fr;
+    }
+
+    .services-box {
+        max-width: 39rem;
+        padding: 5.4rem 3.1rem;
+    }
+
+    .services-box img {
+        width: 28rem;
+        height: 24rem;
+    }
+
+    .whatsapp {
+        bottom: 40px;
+        right: 10px;
+    }
+
+    .whatsapp-img {
+        width: 5rem;
+    }
+
+    .tour-images {
+        gap: 6rem;
+    }
+
+    .tour-images img {
+        width: 100%;
+    }
+
+    .img-overlay .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #1D2B64;
+        opacity: 0;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        transform: translateX(100%);
+        transition: all .3s linear;
+        border-radius: 7px;
+    }
+
+    .img-overlay .common {
+        font-size: 2.6rem;
+    }
+
+    #ayodhya-img img {
+        height: 28rem;
+    }
+
+    .section-contact-main {
+        max-width: 40rem;
+    }
+
+    .section-contact-main .grid {
+        gap: 2rem;
+    }
+
+    .grid-two-column {
+        grid-template-columns: 1fr;
+    }
+
+    .section-contact-main input[type="submit"] {
+        max-width: 49%;
+        border: none;
+    }
+
+    .section-footer {
+        height: 94rem;
+    }
+
+    .section-footer .grid-four-column {
+        grid-template-columns: 1fr;
+    }
+
+    .section-footer .grid {
+        gap: 3rem;
+    }
+
+    .section-footer h3 {
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+    }
+
+    .f-about p {
+        color: #adadad;
+        max-width: 20rem;
+        font-size: 1.3rem;
+    }
+
+    .f-services li,
+    .f-services a {
+        font-size: 1.3rem;
+        color: #adadad;
+    }
+
+    .f-services span,
+    .f-address span {
+        margin-right: .8rem;
+    }
+
+    .f-address p,
+    a {
+        font-size: 1.6rem;
+    }
+
+    .f-credits p {
+        font-size: 1.4rem;
+    }
+
+    .subsection .grid {
+        gap: 0rem;
+    }
+
+    .subsection {
+        margin-top: 1rem;
+        /* keep in mind this margin */
+        margin-bottom: 20rem;
+    }
+
+    .vnstour-img {
+        margin-top: 2rem;
+    }
+
+    .vnstour-img img {
+        width: 35rem;
+        height: 20rem;
+        padding: 0 2rem;
+    }
+
+    .tour-details {
+        padding: 1.6rem 0;
+        gap: 1rem;
+        /* keep in mind this height */
+        height: 6rem;
+    }
+
+    .container3 {
+        background-size: 200%;
+        margin-bottom: 2rem;
+        height: 200vh;
+    }
+
+    .gallery-img {
+        flex-direction: column;
+    }
+
+    .gallery-img img {
+        width: 34rem;
+        height: 26rem;
+    }
+
+    .table thead {
+        display: none;
+    }
+
+    .table,
+    .table tbody,
+    .table tr,
+    .table td {
+        display: block;
+        width: 100%;
+    }
+
+    .table td {
+        text-align: right;
+        padding-left: 50%;
+        text-align: right;
+        position: relative;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        width: 400px;
+        max-width: 28rem;
+    }
+
+    .services-box {
+        max-width: 28rem;
+        padding: 5.4rem 2.6rem;
+    }
+
+    .services-box img {
+        width: 20rem;
+        height: 22rem;
+    }
+
+    .whatsapp {
+        bottom: 40px;
+        right: 10px;
+    }
+
+    .whatsapp-img {
+        width: 5rem;
+    }
+
+    .img-overlay .common {
+        font-size: 1.8rem;
+    }
+
+    #ayodhya-img img {
+        height: 22rem;
+    }
+
+    .section-contact-main {
+        max-width: 30rem;
+    }
+
+    .section-contact-main input[type="submit"] {
+        max-width: 60%;
+    }
+
+    .section-footer {
+        height: 110rem;
+    }
+
+    .section-footer h3 {
+        margin-bottom: 1rem;
+        font-size: 2rem;
+    }
+
+    .f-about p {
+        color: #adadad;
+        max-width: 20rem;
+        font-size: 1.6rem;
+    }
+
+    .f-services li,
+    .f-services a {
+        font-size: 1.6rem;
+        color: #adadad;
+    }
+
+    .f-about p {
+        max-width: 30rem;
+    }
+
+    .f-address p,
+    a {
+        font-size: 1.6rem;
+    }
+
+    .f-credits p {
+        font-size: 1.4rem;
+    }
+
+
+    .subsection {
+        margin-bottom: 26rem;
+    }
+
+    .vnstour-img img {
+        width: 26rem;
+        height: 17rem;
+        padding: 0 2rem;
+    }
+
+    .tour-details {
+        padding: 1.6rem 1.2rem;
+        gap: 1rem;
+        /* keep in mind this height */
+        height: 6rem;
+    }
+
+    .container3 {
+        background-size: 400%;
+        margin-bottom: 6rem;
+        height: 150vh;
+    }
+
+    .gallery-img {
+        flex-direction: column;
+    }
+
+    .gallery-img img {
+        width: 24rem;
+        height: 20rem;
+    }
+}
